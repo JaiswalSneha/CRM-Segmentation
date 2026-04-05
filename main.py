@@ -43,19 +43,19 @@ metrics = metrics[metrics['metric'].isin(['min','mean','max'])]
 
 st.dataframe(metrics)
 
-st.markdown('---')
+# st.markdown('---')
 
-st.header('Numerical & Categorical columns')
+# st.header('Numerical & Categorical columns')
 # cat = df.select_dtypes(include = ['object', 'string']).columns.tolist()
 # num = df.select_dtypes(include = ['int64','float64']).columns.tolist()
 
-cat = [col for col in df.columns if df[col].dtype in ['object', 'string']]
-num = [col for col in df.columns if df[col].dtype in ['int64', 'float64']]
+# cat = [col for col in df.columns if df[col].dtype in ['object', 'string']]
+# num = [col for col in df.columns if df[col].dtype in ['int64', 'float64']]
 
-st.markdown('#### Categorical')
-st.text(cat)
-st.markdown('#### Numerical')
-st.text(num)
+# st.markdown('#### Categorical')
+# st.text(cat)
+# st.markdown('#### Numerical')
+# st.text(num)
 
 st.markdown('---')
 st.header('Target column')
