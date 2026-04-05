@@ -103,7 +103,7 @@ X = df.drop(columns = ['Default'])
 y = df['Default']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
-model_lr = LogisticRegression(max_iter=5000)
+model_lr = LogisticRegression(solver='saga', max_iter=1000)
 model_lr.fit(X_train, y_train)
 y_pred_prob_test = model_lr.predict_proba(X_test)[:, 1]
 
@@ -114,6 +114,8 @@ st.text(f'Rows : {df.shape[0]} , Columns : {df.shape[1]}')
 st.text(df.columns)
 with st.expander("Original Dataset Sample"):
         st.dataframe(df.head())
+
+del df
 
 col1, col2 = st.columns(2)
 with col1:
@@ -312,7 +314,8 @@ y_test_km2_0 = y_test[X_test['cluster_km2'] == 0]
 # st.text(X_train_km2_0.columns)                
 # st.text(X_test_km2_0.columns)
 
-model_km2_0 = LogisticRegression(max_iter=5000)
+
+model_km2_0 = LogisticRegression(solver='saga', max_iter=1000)
 model_km2_0.fit(X_train_km2_0, y_train_km2_0)
 X_test_km2_0_pred = model_km2_0.predict_proba(X_test_km2_0)[:,1]
 
@@ -367,7 +370,7 @@ y_test_km2_1 = y_test[X_test['cluster_km2'] == 1]
 # st.text(X_train_km2_1.columns)                
 # st.text(X_test_km2_1.columns)
 
-model_km2_1 = LogisticRegression(max_iter=5000)
+model_km2_1 = LogisticRegression(solver='saga', max_iter=1000)
 model_km2_1.fit(X_train_km2_1, y_train_km2_1)
 X_test_km2_1_pred = model_km2_1.predict_proba(X_test_km2_1)[:,1]
 
