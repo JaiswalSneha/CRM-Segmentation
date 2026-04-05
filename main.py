@@ -46,7 +46,7 @@ st.dataframe(metrics)
 st.markdown('---')
 
 st.header('Numerical & Categorical columns')
-cat = df.select_dtypes(include = 'object').columns.tolist()
+cat = df.select_dtypes(include = ['object', 'string']).columns.tolist()
 num = df.select_dtypes(include = ['int64','float64']).columns.tolist()
 st.markdown('#### Categorical')
 st.text(cat)
