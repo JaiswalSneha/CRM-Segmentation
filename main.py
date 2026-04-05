@@ -10,7 +10,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title('Segmented Credit Risk Modeling via KMeans Clustering and Validation Metrics')
+st.title('Segmented Credit Risk Modeling Using KMeans and Logistic Regression')
 st.markdown('---')
 
 df = pd.read_excel('Segmentation.xlsx')
